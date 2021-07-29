@@ -9,6 +9,10 @@ require('dotenv').config();
 
 app.set('view engine','ejs')
 app.use(express.static(__dirname+"/public"));
+app.get('/',(req,res)=>{
+    res.render('index');
+  
+})
 // Recuperer le token de me compte twtich
 const getTokens=(url,takeResponse)=>{
     const hearders={
@@ -39,7 +43,7 @@ const getTokens=(url,takeResponse)=>{
       
     
  })
- console.log(Token)
+ 
  // on se connecte a l'api twitch
  const getGameChess=async (accessToken,callFunction)=>{
     try{
@@ -54,7 +58,7 @@ const getTokens=(url,takeResponse)=>{
         const resultC = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
             name:'Chess'
         }})
-        console.log(resultC)
+        
          // on recupere les infos de hearthstone game
         const resultH = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
            name:'Hearthstone'
@@ -90,10 +94,7 @@ const getTokens=(url,takeResponse)=>{
      
  }
 
-app.get('/',(req,res)=>{
-    res.render('index');
-  
-})
+
 
  
   function getChessViewer(){
