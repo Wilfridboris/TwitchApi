@@ -2,9 +2,9 @@
   "name": "wilfridboris",
   "version": "1.0.0",
   "description": "For this project, you will be fetching and displaying data from the Twitch API.\r You can find the documentation for the Twitch API [here](https://dev.twitch.tv/docs/api)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
