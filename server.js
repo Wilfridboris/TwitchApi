@@ -37,7 +37,7 @@ const getTokens=(url,takeResponse)=>{
     
  })
  // on se connecte a l'api twitch
- const getGameChess=async (url,accessToken,callFunction)=>{
+ const getGameChess=async (accessToken,callFunction)=>{
     try{
         const ChessOption=axios.create({
             headers:{
@@ -93,7 +93,7 @@ app.get('/',(req,res)=>{
  
   function getChessViewer(){
         // la fonction prend l'url,le token et le callback en parametre
-     getGameChess('https://api.twitch.tv/helix/games/top',Token,(chess,hearth,rocket,dota)=>{
+     getGameChess(Token,(chess,hearth,rocket,dota)=>{
         
      //on calcule le nombre de visionneur en fonction du jeux qui sera passer en parametre
      var viewer=(input)=>{
