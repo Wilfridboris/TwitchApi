@@ -16,7 +16,7 @@ const getTokens=(url,takeResponse)=>{
         json:true,
         body:{
             client_id:'c61t0hxi6kt9ok1h4v4udn0qntihek',
-            client_secret:'mvhvzkv59sz6qlb0lgs8k4709czatx',
+            client_secret:'z6qjek3954yr8dx0s6c5i7qdhzz3pj',
             grant_type:'client_credentials'
         }
 
