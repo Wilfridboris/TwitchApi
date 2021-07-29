@@ -26,6 +26,7 @@ const getTokens=(url,takeResponse)=>{
     request.post(hearders,(err,res,body)=>{
         if(err) return console.log(err)
         takeResponse(res);
+        console.log(res)
     })
   
 }
