@@ -12,7 +12,7 @@ app.set('view engine','ejs')
 app.set("port",PORT)
 app.use(express.static(__dirname+"/public"));
 app.get('/',(req,res)=>{
-    res.send('yo');
+    res.render('index');
   
 })
 // Recuperer le token de me compte twtich
