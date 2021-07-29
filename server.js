@@ -80,7 +80,7 @@ const getTokens=(url,takeResponse)=>{
         callFunction( chessStream.data,hearthStream.data,rocketStream.data,dotaStream.data)
          
      }catch(err){
-         console.error(error)
+         console.error(err)
      }
      
  }
