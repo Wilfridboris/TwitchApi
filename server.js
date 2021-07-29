@@ -54,6 +54,7 @@ const getTokens=(url,takeResponse)=>{
         const resultC = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
             name:'Chess'
         }})
+        console.log(resultC)
          // on recupere les infos de hearthstone game
         const resultH = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
            name:'Hearthstone'
