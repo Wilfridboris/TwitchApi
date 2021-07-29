@@ -85,6 +85,10 @@ const getTokens=(url,takeResponse)=>{
      
  }
 
+app.get('/',(req,res)=>{
+    res.render('index');
+  
+})
 
  
   function getChessViewer(){
@@ -120,10 +124,6 @@ const getTokens=(url,takeResponse)=>{
 
 
  
-  app.get('/',(req,res)=>{
-    res.render('index');
-  
-})
 
 
     
