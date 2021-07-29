@@ -38,46 +38,50 @@ const getTokens=(url,takeResponse)=>{
  })
  // on se connecte a l'api twitch
  const getGameChess=async (url,accessToken,callFunction)=>{
-     const ChessOption=axios.create({
-         headers:{
-             'Client-ID':'5lwqp9tddm2mo4s53bsg5dqbcim3sc',
-             'Authorization':'Bearer '+ accessToken
-
-         }
-     });
-     // on recupere les infos de Chess game
-     const resultC = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
-         name:'Chess'
-     }})
-      // on recupere les infos de hearthstone game
-     const resultH = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
-        name:'Hearthstone'
-    }})
-     // on recupere les infos de rocket league game
-    const resultR = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
-        name:'Rocket League'
-    }})
-     // on recupere les infos de dota 2 game
-    const resultD = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
-        name:'Dota 2'
-    }})
+    try{
+        const ChessOption=axios.create({
+            headers:{
+                'Client-ID':'5lwqp9tddm2mo4s53bsg5dqbcim3sc',
+                'Authorization':'Bearer '+ accessToken
    
-    // maintenant on utilise les id pour recuperer  les streams pour chacun des jeux 
-     const chessStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
-         game_id:resultC.data.data[0].id
-     }})
-     const hearthStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
-         game_id:resultH.data.data[0].id
-     }})
-     const rocketStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
-         game_id:resultR.data.data[0].id
-     }})
-     const dotaStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
-         game_id:resultD.data.data[0].id
-     }})
-     // on appelle notre callback pour passer les data en parametre
-     callFunction( chessStream.data,hearthStream.data,rocketStream.data,dotaStream.data)
-     
+            }
+        });
+        // on recupere les infos de Chess game
+        const resultC = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
+            name:'Chess'
+        }})
+         // on recupere les infos de hearthstone game
+        const resultH = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
+           name:'Hearthstone'
+       }})
+        // on recupere les infos de rocket league game
+       const resultR = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
+           name:'Rocket League'
+       }})
+        // on recupere les infos de dota 2 game
+       const resultD = await ChessOption.get('https://api.twitch.tv/helix/games',{params:{
+           name:'Dota 2'
+       }})
+      
+       // maintenant on utilise les id pour recuperer  les streams pour chacun des jeux 
+        const chessStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
+            game_id:resultC.data.data[0].id
+        }})
+        const hearthStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
+            game_id:resultH.data.data[0].id
+        }})
+        const rocketStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
+            game_id:resultR.data.data[0].id
+        }})
+        const dotaStream= await  ChessOption.get('https://api.twitch.tv/helix/streams',{params:{
+            game_id:resultD.data.data[0].id
+        }})
+        // on appelle notre callback pour passer les data en parametre
+        callFunction( chessStream.data,hearthStream.data,rocketStream.data,dotaStream.data)
+         
+     }catch(err){
+         console.error(error)
+     }
      
  }
 
