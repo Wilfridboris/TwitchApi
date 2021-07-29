@@ -15,8 +15,8 @@ const getTokens=(url,takeResponse)=>{
         url:"https://id.twitch.tv/oauth2/token",
         json:true,
         body:{
-            client_id:'5lwqp9tddm2mo4s53bsg5dqbcim3sc',
-            client_secret:'8sqp4yqifo7v5tp3pr30h776tp4eb2',
+            client_id:'c61t0hxi6kt9ok1h4v4udn0qntihek',
+            client_secret:'mvhvzkv59sz6qlb0lgs8k4709czatx',
             grant_type:'client_credentials'
         }
 
