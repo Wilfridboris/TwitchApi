@@ -10,7 +10,7 @@ require('dotenv').config();
 app.set('view engine','ejs')
 app.use(express.static(__dirname+"/public"));
 app.get('/',(req,res)=>{
-    res.render('index');
+    res.send('yo');
   
 })
 // Recuperer le token de me compte twtich
@@ -30,7 +30,7 @@ const getTokens=(url,takeResponse)=>{
     request.post(hearders,(err,res,body)=>{
         if(err) return console.log(err)
         takeResponse(res);
-        console.log(res)
+       
     })
   
 }
