@@ -1,0 +1,33 @@
+html{
+    box-sizing: border-box;
+    
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+} 
+body{
+   padding:0px;
+   margin: 0px;
+background-color:#f7fff7;
+}
+header{
+    background-color: rgb(5, 81, 87);
+    height: 50px;
+    text-align: center;
+    color: #f7f7f7;
+    font-size: 20px;
+    
+}
+.container{
+    text-align: center;
+}
+h3{
+    font-size: 40px;
+}
+section{
+    display: inline-block;
+    margin: 20px;
+}
+section p{
+   font-size: 20px;
+}

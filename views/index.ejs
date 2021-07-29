@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('./head')%>
+    <main>
+        <div id="container">
+            <h1>Chess Real Time Viewer</h1>
+             <div class="Section">
+            
+                <img src="https://static-cdn.jtvnw.net/ttv-boxart/Chess-300x400.jpg">
+                <h3 id="lab"></h3>
+            
+             </div>
+             <div class="Section">
+               <section>
+                 
+                <img src="https://static-cdn.jtvnw.net/ttv-boxart/Hearthstone-200x300.jpg">
+                <p>HeartchStone: <span id="hearth"></span></p>
+               </section>
+               <section>
+                 
+                <img src="https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-200x300.jpg">
+                <p>Dota 2: <span id="dota"></span></p>
+               </section>
+               <section>
+                 
+                <img src="https://static-cdn.jtvnw.net/ttv-boxart/Rocket%20League-200x300.jpg">
+                <p>Rocket League: <span id="rocket"></span></p>
+               </section>
+               
+            
+                
+               
+             
+                
+            
+                
+             </div>
+             <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+           
+        </div>
+       
+
+    </main>
+
+  
+  <script src = "/socket.io/socket.io.js"></script>
+  <script src= "dependencies/jquery.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src= "dependencies/ioclient.js"></script>
+
+</body>
+
+
+</html>
