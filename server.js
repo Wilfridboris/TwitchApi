@@ -34,8 +34,11 @@ const getTokens=(url,takeResponse)=>{
  getTokens('https://id.twitch.tv/oauth2/token',(res)=>{
       Token=res.body.access_token;
       return Token;
+     
+      
     
  })
+ console.log(Token)
  // on se connecte a l'api twitch
  const getGameChess=async (accessToken,callFunction)=>{
     try{
