@@ -1,3 +1,4 @@
+const PORT=process.env.PORT||'8080'
 const express=require('express')
 const app=express()
 const server=require('http').Server(app)
@@ -8,6 +9,7 @@ require('dotenv').config();
 
 
 app.set('view engine','ejs')
+app.set("port",PORT)
 app.use(express.static(__dirname+"/public"));
 app.get('/',(req,res)=>{
     res.send('yo');
@@ -137,6 +139,6 @@ const getTokens=(url,takeResponse)=>{
  
  
 
-server.listen(5000,()=>{
+server.listen(PORT,()=>{
     console.log("listen to port")
 })
